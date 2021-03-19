@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Project Overview](#Overview)
-* [Manipulating the DOM - Changes made using JS](#Manipulating the DOM)
+* [Manipulating the DOM - Changes made using JS](#Manipulating_the_DOM)
 * [General Notes](#General Notes)
 
 ## Project Overview
