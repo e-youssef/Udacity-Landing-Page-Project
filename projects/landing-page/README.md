@@ -4,7 +4,7 @@
 
 * [Project Overview](#Overview)
 * [Manipulating the DOM - Changes made using JS](#Manipulating_the_DOM)
-* [General Notes](#General Notes)
+* [General Notes](#General_Notes)
 
 ## Project Overview
 
