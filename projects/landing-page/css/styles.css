@@ -2,14 +2,18 @@
  *
  * CSS written based on SMACSS architecture.
  * To learn more, visit: http://smacss.com/
- * 
- * For simplicity, no reset or normalize is added. 
+ *
+ * For simplicity, no reset or normalize is added.
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
 */
 
 
 /* ---- Base Rules ---- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -68,18 +72,77 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    overflow: auto;
+    background-color: #000;
+    vertical-align: middle;
+    color: white;
 }
 
 .navbar__menu li {
-    display: inline-block;
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      vertical-align: middle;
+}
+.navbar__menu a {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      font-family: 'Fira Sans', sans-serif;
 }
 
-.navbar__menu .menu__link {
+.icon {
+  display: none;
+  color:white;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navbar__menu li:not(:first-child) {display: none;}
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    float: right;
     display: block;
+    vertical-align: middle;
+  }
+}
+
+/* The "responsive" class is added to the navbar__menu with JavaScript when the user clicks on the icon. This class makes the navbar__menu look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .navbar__menu.responsive {position: relative;}
+  .navbar__menu.responsive.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+  }
+  .navbar__menu.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/*@media only screen and (max-width: 400px){
+    .navbar__menu ul {
+      float: none;
+      width: 100%;
+      max-height: 55px;
+    }
+}
+*/
+.navbar__menu .menu__link {
+    display: inline-block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: ##ffffff;
+    vertical-align: middle;
 }
 
 .navbar__menu .menu__link:hover {
@@ -88,9 +151,35 @@ section {
     transition: ease 0.3s all;
 }
 
+.topbutton {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  border: 1px solid#0E132C;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 0.75rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.topbutton:hover {
+    background-color: rgb(149,157,151);
+}
+
+.topbutton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: #000000;
     position: fixed;
     top: 0;
     width: 100%;
@@ -126,7 +215,7 @@ section {
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
-    text-align: right; 
+    text-align: right;
 }
 
 /* Background Circles */
@@ -217,7 +306,7 @@ section.your-active-class .landing__container::after {
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
+		           translate(-1em)
 		           rotate(-360deg);
 	}
 }
