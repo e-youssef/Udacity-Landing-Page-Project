@@ -27,7 +27,7 @@ The the following was done using Javascript and some changes in the html and css
 - All features are usable across modern desktop, tablet, and phone browsers.
 - Navigation is built dynamically as an unordered list (adds more menu items automatically when more sections are added to the HTML).
 - The Project folder contains 4 files as follows:
-- index.html
-- styles.css
-- app.js
-- Readme.md
+*  index.html
+*  styles.css
+*  app.js
+*  Readme.md
